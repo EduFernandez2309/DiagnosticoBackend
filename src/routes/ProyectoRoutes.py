@@ -19,7 +19,7 @@ def insert_proyecto():
     try:
         data = request.json
         proyecto = ProyectoModel.insert_proyecto(data)
-        return jsonify({'proyecto':proyecto, 'message': 'Proyecto insertado exitosamente', 'success': True})
+        return jsonify({'proyecto':proyecto, 'message': 'Proyecto insertado exitosamente', 'success': True}), 201
     except Exception as ex:
         return jsonify({'message': str(ex)}), 500
 

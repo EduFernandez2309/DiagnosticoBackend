@@ -16,7 +16,7 @@ class ProyectoModel():
 
                 for row in resultset:
                     proyecto = Proyecto(row[0], row[1], row[2].strftime("%Y-%m-%d"), row[3], row[4], row[5])
-                    proyectos.append(proyecto.to_JSON(row[6]))
+                    proyectos.append(proyecto.get_to_JSON(row[6]))
 
             return proyectos
         except Exception as ex:

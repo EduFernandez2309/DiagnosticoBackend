@@ -14,12 +14,12 @@ def get_tipos_proyecto():
     except Exception as ex:
         return jsonify({'message':str(ex)}), 500
     
-@main.route('/', methods=['POST'])
+@main.route('/', methods=['POST', 'OPTIONS'])
 def insert_tipo_proyecto():
     try:
         data = request.json
         tipo_proyecto = TipoProyectoModel.insert_tipo_proyecto(data)
-        return jsonify({'tipo_proyecto': tipo_proyecto, 'message': 'Tipo de proyecto insertado exitosamente', 'success': True})
+        return jsonify({'tipo_proyecto': tipo_proyecto, 'message': 'Tipo de proyecto insertado exitosamente', 'success': True}), 201
     except Exception as ex:
         return jsonify({'message': str(ex)}), 500
 

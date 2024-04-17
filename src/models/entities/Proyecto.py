@@ -8,7 +8,18 @@ class Proyecto():
         self.integrantes_minimo=integrantes_minimo
 
 
-    def to_JSON(self, tipo_proyecto):
+    def to_JSON(self, ):
+        return {
+            'id':self.id,
+            'nombre':self.nombre,
+            'fecha_registro':self.fecha_registro,
+            'costo':self.costo,
+            'integrantes_minimo':self.integrantes_minimo,
+            'tipo_proyecto_id':self.tipo_proyecto_id,
+
+        }
+    
+    def get_to_JSON(self, tipo_proyecto):
         return {
             'id':self.id,
             'nombre':self.nombre,
